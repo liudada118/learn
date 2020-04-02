@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size:100px">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+  content="initial-scale=0.5,maximum-scale=0.5, minimum-scale=0.5,width=device-width, height=device-height, user-scalable=no">
+  <title>Document</title>
+  <!-- sdk -->
+  <script type="text/javascript" 
+  src="https://api.map.baidu.com/api?v=2.0&ak=wSbGrnuUkKNWFFnySb4LPCtXBktNPkjc"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .star-ul{
+      list-style: none;
+      text-align: left;
+    }
+    .poi-star-cont .star-ul li{
+      width: 0.1rem;
+      height: 0.1rem;
+      display: inline-block;
+    }
+    body {
+      /* css 继承 */
+      font-size: 0.28rem;
+      line-height: 1.5;
+    }
+    img {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      max-width: 100%;
+    }
+    #map {
+      width: 100vw;
+      height: 100vh;
+    }
+    .poi-item-wrapper {
+      background-color: #fff;
+      padding: 0.24rem 0 0 0.3rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .poi-item-wrapper .poi-info-wrapper {
+      display: flex;
+    }
+    .poi-item-wrapper .image-wrapper {
+      position: relative;
+      margin-top: 0.05rem;
+      width: 1.6rem;
+      height: 1.61rem;
+    }
+    .poi-item-wrapper .poi-info {
+      max-width: 666px;
+      font-size: 12px;
+      margin-left: 0.18rem;
+      /* flex:1 ; */
+      position: relative;
+      margin-top: 0.05rem;
+      width: 3.6rem;
+      height: 1.61rem;
+    }
+    .poi-item-wrapper .poi-info .price-wrapper {
+      position: relative;
+      font-size: 0.24rem;
+      line-height: 0.33rem;
+      margin-top: 0.06rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 1rem;
+    }
+    .poi-item-wrapper .poi-info .location {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 0.33rem;
+      line-height: 0.33rem;
+      font-size: 0.24rem;
+      font-family: PingFangSC-Regular;
+      color: #666666;
+      letter-spacing: 0.2px;
+    }
+    .poi-item-wrapper .poi-info .poi-source{
+      padding: 0.06rem 0 0;
+      height: 0.2rem;
+     line-height: 0.13rem;
+     position: relative;
+    }
+
+   .poi-star-cont .star-ul .star{
+    overflow: hidden;
+     width: 0.5rem;
+     height: 0.5rem;
+   }
+    .poi-star-cont .star-light{
+      position: absolute;
+      padding: 0.06rem 0 0;
+      top: 0;
+    }
+    .poi-item-wrapper .poi-info .poi-source p{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.06rem 0 0; 
+display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- html  +   css -->
+  <!-- 附近的商家 info  -->
+  <!-- 所有商家总框架 -->
+  <div class="shop-list">
+    <!-- 第一个商家的框架 
+    <div class="poi-item-wrapper">
+      第一个商家的所谓位置  信息 里面为商家各种信息的布局
+      <div class="poi-info-wrapper">
+        商家图片总框架
+        <div class="image-wrapper">
+          商家图片
+          <div class="imgbox">
+            <img src="http://p0.meituan.net/deal/__45899142__3351739.jpg@320w_320h_1e_1c" alt="">
+          </div>
+        </div>
+        商家介绍总框架
+        <div class="poi-info">
+          名字
+          <div class="poi-name"></div>
+          星级 价格总框架
+          <div class="poi-source poi-clear">
+            星级位置
+            <div class="poi-star-cont">
+              <ul class="star-ul">
+                <li >
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+              </ul>
+              <ul class="star-ul star-light">
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+              </ul> 
+            </div>
+            评论位置
+            <p>355条评论</p>
+          </div>
+          距离位置
+          <div class="price-wrapper">
+            <div class="location"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="poi-item-wrapper">
+      
+    </div>
+  </div>
+  <!-- <div id="map"></div> -->
+  <script>
+  // 1. 距离
+  // 2. 点 经纬度
+  // 昙华林 114.320796,30.556831 115.941546,28.544622
+  // 麦当劳 114.306385,30.553116
+  // 命名规范
+  const shop = [
+    {
+      name : '麦当劳(司门口店)',
+      pos : [114.306385,30.553116],
+      logo : '//p1.meituan.net/msmerchant/33f8b5fcbb762d9f8d5e6b06c381b9f6273776.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : '麦当劳益禾堂(中医药昙华林店)',
+      pos : [114.318167,30.556653],
+      logo : '//p0.meituan.net/msmerchant/af2d5b8893778b28196532ddd6e4861a239158.png@275w_156h_1e_1c'
+    },
+    {
+      name : '小民大排档江汉路',
+      pos : [114.295768,30.586725],
+      logo : '//p0.meituan.net/msmerchant/684651ab0fd0092864e92f1f9c2b3fd037771.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : '胡桃里音乐酒馆（昙华林店）',
+      pos : [114.323163,30.557607],
+      logo : '//p0.meituan.net/mogu/3f242fdfcfe5076da84956e28bd9f9ef26760.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : 'L amour澜茉·餐厅 轻法餐',
+      pos : [114.308657,30.591416],
+      logo : '//p0.meituan.net/180.180/msmerchant/667a0e42adccefb2b4027b3820927f1f752943.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : '小川料理（楚河汉街店）',
+      pos : [114.351772,30.560387],
+      logo : '//p1.meituan.net/msmerchant/3203d6e8001d3575543d6cfaef30cfef1370120.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : 'ZONE Lounge（泛悦汇昙华林店）',
+      pos : [114.311005,30.541062],
+      logo :'//p0.meituan.net/msmerchant/f91e3faabb7bbc8e2dd7377cd002659f241653.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : '阳光利亚•铁板牛排•海鲜自助（昙华林店）',
+      pos : [114.322626,30.557741],
+      logo :'//p0.meituan.net/msmerchant/2451f505bf86e2177b94cefbfedee78a58196.jpg@275w_156h_1e_1c'
+    },
+    {
+      name : '粒私厨至善料理（光谷天地店）',
+      pos : [114.417278,30.483143],
+      logo :'//p0.meituan.net/180.180/msmerchant/41c29122215dc27f18b6eb9d5700456c3309855.jpg@275w_156h_1e_1c'
+    }
+
+  ]
+    
+  const myLatitude = '30.556831',
+    myLongitude = '114.320796'
+
+  
+  // sdk 有点大， 他在远方
+  // js 事件机制
+  // window.onload 网页执行完毕立刻执行操作
+  window.onload = function() {
+    const shopContainer=document.querySelector('.shop-list')
+    const map = new BMap.Map();
+    const myPoint = new BMap.Point(myLongitude, myLatitude);
+
+    for(i=0 ;i<shop.length ; i++){
+      let shopPoint =new BMap.Point(shop[i].pos[0],shop[i].pos[1])
+      let distance = parseDistance(
+      // 925.1111
+      // 得到两点的距离
+      map.getDistance(myPoint, shopPoint)
+    );
+    shopContainer.innerHTML += `
+    <div class="poi-item-wrapper">
+      <div class="poi-info-wrapper">
+        <div class="image-wrapper">
+          <div class="imgbox">
+            <img src="${shop[i].logo}" alt="">
+          </div>
+        </div>
+        <div class="poi-info">
+          <div class="poi-name">${shop[i].name}</div>
+          <div class="poi-source poi-clear">
+            <div class="poi-star-cont">
+              <ul class="star-ul">
+                <li >
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="star"><img src="./svg/star.svg" alt=""></i>
+                </li>
+              </ul>
+              <ul class="star-ul star-light">
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+                <li>
+                  <i class="starLight"><img src="./svg/starlight.svg" alt=""></i>
+                </li>
+              </ul> 
+            </div>
+            <p>355条评论</p>
+          </div>
+          <div class="price-wrapper">
+            <div class="location">${distance}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    `
+    }
+    // 定义一个输入数值就返回距离的函数
+    function parseDistance(distance) {
+      //  如果> 1000米 返回  4.1km
+      // 否则 整数  936m
+      if (distance < 1000) {
+        // parseInt() 函数可解析一个字符串，并返回一个整数。
+        return parseInt(distance)+'m'; 
+      } else {
+        // toFixed(1)小数点后面一位
+        return (distance/1000).toFixed(1)+"km";
+      }
+    }
+
+    //  开始我们的js 编程
+    // const map = new BMap.Map(); //实例化地图
+    // // map.centerAndZoom("南昌县仁兴家园", 17)
+
+    // //两点距离
+    // const myPoint = new BMap.Point(myLongitude, myLatitude);
+    // const kfcPoint = new BMap.Point(kfcLongitude, kfcLatitude);
+    // const distance = parseDistance(
+    //   // 925.1111
+    //   // 得到两点的距离
+    //   map.getDistance(myPoint, kfcPoint)
+    // ); // Number
+    // console.log(distance);
+    // 添加内容 innerhtml应该就是添加到html中
+    // document.querySelector('.poi-name').innerHTML =  '肯德基';
+    // document.querySelector('.location').innerHTML = distance;
+    // document.querySelector('.imgbox img').src = 
+    //   "https://p0.meituan.net/200.0/deal/607cffdccca7f4da09a2dddeedd31a8e49072.jpg@126_0_388_388a%7C267h_267w_2e_100Q"
+  }
+  
+  </script>
+</body>
+</html>
