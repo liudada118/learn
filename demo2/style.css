@@ -239,9 +239,9 @@ height: 0;
 border-left: 5px solid dimgray;
 
 }
-.g{
+/* .g{
     display: none;
-}
+} */
 .quxiaolan{
     position: relative;
     /* top: -40px; */
@@ -354,20 +354,20 @@ border-left: 5px solid dimgray;
     font-size: 14px;
     display: inline-block;
     height: 30px;
-    width: 60px;
+    width: 76px;
 }
 .aaa{
     display: block;
 }
-.c {
+/* .c {
     display: none; 
     }
 .g{
     display: none;
-}
-.h{
+} */
+/* .h{
     display: none;
-}
+} */
 .xuanxianglan{
     display: none;
 }
@@ -380,12 +380,12 @@ border-left: 5px solid dimgray;
 .dianzanlan{
     display: none;
 }
-.h{
+/* .h{
     display: none;
 }
 .y{
     display: none;
-}
+} */
 .onclick{
  display: none;
 }
