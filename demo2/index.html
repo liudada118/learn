@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/2.3.0/style/weui.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="body">
+        <div class="top">
+            <div class="certern">
+                <img src="./images/3.jpg" alt="">
+            </div>
+            <div class="fanhui">
+                <img src="./images/1.png" alt="">
+            </div>
+            <div class="zhaoxiangji">
+                <img src="./images/2.png" alt="">
+            </div>
+            <div class="touxiang">
+                <div class="nicheng"><p>三星泽拉斯</p></div>
+                
+                <div class="touxiang-img">
+                <img src="./images/4.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="weui-panel__bd">
+                <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="./images/5.jpg" alt="">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <p class="weui-media-box__title">憨巴</p>
+                        <p class="weui-media-box__desc">100天</p>
+                        <div class="weui-media-box__img">
+                            <img src="./images/6.jpg" alt="">
+                        </div>
+                    </div>
+
+                </a>
+                    <div class="j dianzanlan show">
+                        <div class="botton">
+                            <div class="yuan"></div>
+                            <div class="yuan yuan-right"></div>
+                        </div>
+                        <div class="xuanxianglan">
+                            <div class=" xuanxiang">
+                                <div class="c quxiaokuang">
+                                    <div class="e guding">
+                                       <div class="b dianzan-img">
+                                        <img src="./images/7.png" alt="">
+                                    </div>
+                                    <div class="a dianzan"><p>赞</p></div> 
+                                    </div>
+                                    
+                                </div>
+                                <div class="g pinglunkuang">
+                                    <div class="b pinglun-img">
+                                        <img src="./images/8.png" alt="">
+                                    </div>
+                                    <div class="a pinglun"><p>评论</p></div>
+                                </div>
+                            </div>
+                            <div class="xuanxiang-sanjiaoxing"></div>
+                        </div>   
+                        <div class="time">
+                            <p>3分钟前</p>
+                        </div>
+                    </div>
+                    <div class="quxiaolan dianzanlan">
+                        <div class="k botton">
+                            <div class="yuan"></div>
+                            <div class="yuan yuan-right"></div>
+                        </div>
+                        <div class="l xuanxianglan">
+                            <div class=" xuanxiang">
+                                <div class="h quxiaokuang">
+                                    <div class="e guding">
+                                       <div class="b dianzan-img">
+                                        <img src="./images/7.png" alt="">
+                                    </div>
+                                    <div class="a dianzan"><p>取消</p></div> 
+                                    </div>
+                                    
+                                </div>
+                                <div class="y pinglunkuang">
+                                    <div class="b pinglun-img">
+                                        <img src="./images/8.png" alt="">
+                                    </div>
+                                    <div class="a pinglun"><p>评论</p></div>
+                                </div>
+                            </div>
+                            <div class="xuanxiang-sanjiaoxing"></div>
+                        </div>   
+                        <div class="time">
+                            <p>3分钟前</p>
+                        </div>
+                    </div>   
+                </div>
+                    <div class="dianzanxianshi">
+                        <div class="dianzanxianshikuang">
+                            <div class="dianzanren">
+                                <div class="dianzan-img">
+                                    <img src="./images/9.png" alt="">
+                                </div>
+                                <div class="dianzanmingzi"><p>三星泽拉斯</p></div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="pinglunqu">
+                    <div id="aa" class="pingluntext">
+                        <!-- <p class="name">三星泽拉斯:</p>
+                        <p class="text" name='text'></p> -->
+                    </div>
+                    
+                </div>
+                <div class="pingluninput">
+                        <form class="form" name="myfrm" action="">
+                            <input type="text" name='input'>
+                            <button type="submit">确认</button>
+                        </form>
+                    </div>
+                <!-- <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+                    <div class="weui-media-box__hd">
+                        <img class="weui-media-box__thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==" alt="">
+                    </div>
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">标题二</h4>
+                        <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    </div>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        const botton = document.querySelector('.botton')
+        const c =document.querySelector('.c')
+        const g = document.querySelector('.g')
+        const h=document.querySelector('.h')
+        const xuanxianglan = document.querySelector('.xuanxianglan')
+        const dianzanxianshi=document.querySelector('.dianzanxianshi')
+        const quxiaolan = document.querySelector('.quxiaolan')
+        const j=document.querySelector('.j')
+        const k =document.querySelector('.k')
+        const y =document.querySelector('.y')
+        const l =document.querySelector('.l')
+        const pinglunkuang = document.querySelector('.pinglunkuang')
+        const pingluninput=document.querySelector('.pingluninput')
+        const pinglunqu =document.querySelector('.pinglunqu')
+        const text=document.querySelector('.text')
+        const pingluntext = document.querySelector('.pingluntext')
+        // const o = function(){
+        // botton.addEventListener('click',function(){
+        //     // console.log(c)
+        //     xuanxianglan.classList.add('show')
+        //     c.classList.add('show')
+        //     g.classList.add('show')
+        //     botton.addEventListener('click',function(){
+        //     console.log(c)
+        //     xuanxianglan.classList.add('show')
+        //     c.classList.add('show')
+        //     g.classList.add('show')})
+        //     o()
+        // })
+        // cc()
+        // dc()
+        // }
+        // o()
+        
+        // 赞被点击
+        const cc = function(){
+          c.addEventListener('click',function(){
+        dianzanxianshi.classList.add('show')
+        j.classList.remove('show')
+        quxiaolan.classList.add('show')
+        })  
+
+        } 
+        cc()
+        
+        // 取消zan状态按钮被点击
+        const bc = function(){
+          k.addEventListener('click',function(){
+            // console.log(k)
+            l.classList.add('show')
+            pingluninput.classList.remove('show')
+            // h.classList.add('show')
+            // y.classList.add('show') 
+        // dianzanxianshi.classList.remove('show')
+        })   
+        }
+        bc()
+        // 取消按钮被点击
+        // 赞状态下评论框被点击
+        const dc = function(){
+            g.addEventListener('click',function(){
+            // console.log(g)
+            pinglunqu.classList.add('show')
+            pingluninput.classList.add('show')
+            xuanxianglan.classList.remove('show')
+        }) 
+        }
+        dc()
+        const fc = function(){
+            y.addEventListener('click',function(){
+                // console.log(y)
+                pinglunqu.classList.add('show')
+            pingluninput.classList.add('show')
+            l.classList.remove('show')
+
+            })
+        }
+        fc()
+        const ac = function(){
+            h.addEventListener('click',function(){
+            dianzanxianshi.classList.remove('show')
+            l.classList.remove('show')
+            j.classList.add('show')
+            xuanxianglan.classList.remove('show')
+            quxiaolan.classList.remove('show')
+            // bc()
+            // dc()
+        })
+        }
+        ac()
+        
+    //    const jj = function(){
+    //        k.addEventListener('click',function(){
+            
+    //         xuanxianglan.classList.remove('show')
+    //         pingluninput.classList.remove('show')
+    //        })
+    //    }
+        const o = function(){
+        botton.addEventListener('click',function(){
+            // console.log(c)
+            xuanxianglan.classList.add('show')
+            pingluninput.classList.remove('show')
+            // c.classList.add('show')
+            // g.classList.add('show')
+            // botton.addEventListener('click',function(){
+            // // console.log(c)
+            // xuanxianglan.classList.add('show')
+            // // c.classList.add('show')
+            // // g.classList.add('show')
+            // })
+            o()
+        })
+        // cc()
+        // fc()
+        }
+        o()
+        
+        
+        
+        
+        const form = document.forms.myfrm
+        form.addEventListener('submit',function(event){
+            event.preventDefault(event)
+            const input = form.input.value
+            if(input.length>0)
+            {
+                const div = document.createElement("div")
+                pingluntext.classList.add('show')
+                pingluninput.classList.remove('show')
+                div.innerHTML=`
+                <div class='aaa'>
+                        <p class="name">三星泽拉斯<p class="text" name='text'>:${input}</p></p>
+                        
+                        </div>
+                `
+                document.getElementById("aa").appendChild(div)
+            }
+            botton.addEventListener('click',function(){
+                pingluninput.classList.remove('show')
+            })
+        })
+
+    </script>
+</body>
+</html>
