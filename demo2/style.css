@@ -101,17 +101,23 @@ height: 40%;
 .weui-media-box{
  position: relative;
 }
-.weui-media-box__hd{
+.weui-media-box_appmsg .weui-media-box__hd{
     position: absolute;
+
     top: 16px;
     width: 40px;
     height: 40px;
     border-radius: 5px;
     overflow: hidden;
 }
+.weui-media-box_appmsg .weui-media-box__bd{
+    position: relative;
+    /* left: -10px; */
+    flex: 1;
+}   
 .weui-media-box__bd{
     position: relative;
-    left: 76px;
+    left: 56px;
 }
 .weui-media-box__title{
     color: blue;
@@ -251,7 +257,7 @@ border-left: 5px solid dimgray;
 } */
 .time{
     position: absolute;
-    left: 92px;
+    left: 72px;
     height: 20px;
     width: 60px;
 }
@@ -272,8 +278,8 @@ border-left: 5px solid dimgray;
     display: flex;
     align-items: center;
     position: absolute;
-    left: 92px;
-    width: 74%;
+    left: 72px;
+    width: 81%;
     max-height: 26px;   
 }
 .dianzanren{
@@ -310,9 +316,9 @@ border-left: 5px solid dimgray;
 }
 .pingluntext{
     position: relative;
-    left: 92px;
+    left: 72px;
     max-height: 100%;
-    width: 74%;
+    width: 81%;
 }
 .pingluntext p{
     font-size: 14px;
@@ -324,7 +330,8 @@ border-left: 5px solid dimgray;
     color:#1296db ;
 }
 .text{
-    display: inline-block;
+    word-wrap:break-word;
+    display: inline;
     /* position: absolute; */
     /* top: 0; */
     /* left: ; */
@@ -354,10 +361,11 @@ border-left: 5px solid dimgray;
     font-size: 14px;
     display: inline-block;
     height: 30px;
-    width: 76px;
+    width: 69px;
 }
 .aaa{
     display: block;
+    /* min-height: 14px; */
 }
 /* .c {
     display: none; 
