@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            height: 600px;
+            width: 200px;
+            overflow: scroll;
+            border: 1px solid black;
+        }
+        .b{
+            position: relative;
+            /* left: -40px; */
+            margin-top: 900px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            opacity: 0;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b"></div>
+    </div>
+    <script>
+        const b = document.querySelector('.b')
+        var observer = new IntersectionObserver(function(nodes){   //定义一个交叉
+            nodes.forEach(function(node){
+                // console.log(node)
+                if(node.isIntersecting){
+                    // console.log("出现了")
+                    b.style.opacity=1
+                    b.style.transform=`translateX(40px)`
+                }
+            })
+        },{
+            root : document.querySelector('.a'),
+            // threshold : [0.5,1]
+        })
+        observer.observe(b)
+    </script>
+</body>
+</html>
