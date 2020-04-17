@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.warpper {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+.top {
+  background-color: #1296db;
+  height: 17vh;
+}
+.top .search-item {
+  display: flex;
+  height: 7vh;
+  position: relative;
+}
+.top .search-item .search-address {
+  margin: 1vh 1vw;
+  height: 5vh;
+  width: 16vw;
+  position: relative;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .search-item .search-address p {
+  color: #fff;
+}
+.top .search-item .search-address .search-addressImg {
+  height: 20px;
+  width: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.top .search-item .search-address .search-addressImg img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 5px;
+}
+.top .search-item .search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64vw;
+  margin: 1vw;
+  border-radius: 2px;
+}
+.top .search-item .search-input .inputSearchImg {
+  position: absolute;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+}
+.top .search-item .search-input .inputSearchImg img {
+  height: 100%;
+  width: 100%;
+}
+.top .search-item .search-input p {
+  position: absolute;
+  left: 23px;
+}
+.top .search-item .search-input input {
+  border: none;
+  width: 100%;
+  height: 24px;
+}
+.top .search-item .search-input .inputVoiceImg {
+  position: absolute;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+}
+.top .search-item .search-input .inputVoiceImg img {
+  height: 100%;
+  width: 100%;
+}
+.top .search-item .search-friend {
+  width: 7vw;
+  margin: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .search-item .search-friend .search-friendImg {
+  width: 28px;
+  height: 28px;
+}
+.top .search-item .search-friend .search-friendImg img {
+  height: 100%;
+  width: 100%;
+}
+.top .search-item .search-add {
+  width: 7vw;
+  margin: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top .search-item .search-add .search-addImg {
+  width: 28px;
+  height: 28px;
+}
+.top .search-item .search-add .search-addImg img {
+  height: 100%;
+  width: 100%;
+}
+.top .function-item {
+  height: 10vh;
+  display: flex;
+}
+.top .function-item .functions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.top .function-item .functions p {
+  color: width;
+}
+.top .function-item .functions .functionImg {
+  width: 38px;
+  height: 38px;
+}
+.top .function-item .functions .functionImg img {
+  width: 100%;
+  height: 100%;
+}
+.contern {
+  overflow: scroll;
+  background-color: #e6e6e6;
+  height: 77vh;
+  font-size: 12px;
+}
+.contern .uses-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vh 5vw;
+}
+.contern .uses-item .use {
+  height: 7vh;
+  width: 18vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contern .uses-item .use .useImg {
+  width: 24px;
+  height: 24px;
+}
+.contern .uses-item .use .useImg img {
+  width: 100%;
+  height: 100%;
+}
+.contern .advise-item {
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 0.5vh 3vw;
+  position: relative;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contern .advise-item .adviseImg {
+  position: absolute;
+  left: 4px;
+  width: 38px;
+  height: 38px;
+}
+.contern .advise-item .adviseImg img {
+  width: 100%;
+  height: 100%;
+}
+.contern .advise-item li {
+  font-size: 12px;
+}
+.contern .advise-item li p {
+  margin-left: 6px;
+  color: #cdcdcd;
+  display: inline;
+}
+.contern .advise-item .news {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f00;
+  color: #fff;
+  position: absolute;
+  right: 16px;
+}
+.contern .advise-item .arrowImg {
+  position: absolute;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+}
+.contern .advise-item .arrowImg img {
+  height: 100%;
+  width: 100%;
+}
+.contern .discount-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+}
+.contern .discount-item .discount {
+  background-color: #fff;
+  border-radius: 4px;
+  display: flex;
+  height: 12vh;
+  width: 90vw;
+  margin: 0.5vh 3vw;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.contern .discount-item .discount .text {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 60vw;
+  height: 8vh;
+}
+.contern .discount-item .discount .text .discount-big {
+  font-size: 20px;
+}
+.contern .discount-item .discount .text .discount-big span {
+  color: #1296db;
+}
+.contern .discount-item .discount .text .discount-small {
+  font-size: 14px;
+}
+.contern .discount-item .discount .text .discount-small p {
+  display: inline;
+  color: #cdcdcd;
+}
+.contern .discount-item .discount .text .discount-small .discount-go {
+  display: inline;
+  background-color: #1296db;
+  border-radius: 6px;
+  position: relative;
+}
+.contern .discount-item .discount .text .discount-small .discount-go p {
+  position: relative;
+  left: 8px;
+  font-size: 12px;
+  display: inline-block;
+  color: #fff;
+  vertical-align: top;
+}
+.contern .discount-item .discount .text .discount-small .discount-go .goImg {
+  vertical-align: top;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.contern .discount-item .discount .text .discount-small .discount-go .goImg img {
+  width: 100%;
+  height: 100%;
+}
+.contern .discount-item .discount .discount-money {
+  flex: 1;
+  padding: 4px;
+}
+.contern .discount-item .discount .discount-money img {
+  height: 100%;
+  width: 100%;
+}
+.contern .discount-item .middle {
+  position: absolute;
+  bottom: 6px;
+}
+.contern .discount-item .middle div {
+  display: inline-block;
+  background-color: #cdcdcd;
+  width: 4px;
+  height: 4px;
+  margin: 0 4px;
+}
+.contern .fight-item {
+  border-radius: 4px;
+  background-color: #fff;
+  height: 40vh;
+  width: 88vw;
+  margin: 0.5vh 3vw;
+  padding: 3vw;
+}
+.contern .fight-item .fightTitle {
+  height: 4vh;
+  width: 88vw;
+}
+.contern .fight-item .fightTitle p {
+  font-size: 18px;
+  color: #000;
+}
+.contern .fight-item .fightTitle p span {
+  margin-left: 4px;
+  font-size: 12px;
+  color: #cdcdcd;
+}
+.contern .fight-item .fightContent {
+  width: 88vw;
+  height: 8vh;
+}
+.contern .fight-item .fightContent .truth {
+  width: 88vw;
+  height: 10vh;
+  display: flex;
+}
+.contern .fight-item .fightContent .truth .number {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contern .fight-item .fightContent .truth .number1 span {
+  font-size: 28px;
+  color: #008000;
+}
+.contern .fight-item .fightContent .truth .number2 span {
+  font-size: 28px;
+  color: #f4ea2a;
+}
+.contern .fight-item .fightContent .truth .number3 span {
+  font-size: 28px;
+  color: #f00;
+}
+.contern .fight-item .fightContent .truth .number4 span {
+  font-size: 28px;
+  color: #cdcdcd;
+}
+.contern .fight-item .fightProtects {
+  width: 88vw;
+  height: 10vh;
+  display: flex;
+}
+.contern .fight-item .fightProtects .fightProtect {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contern .fight-item .fightProtects .fightProtect .protectImg {
+  width: 24px;
+  height: 24px;
+}
+.contern .fight-item .fightProtects .fightProtect .protectImg img {
+  width: 100%;
+  height: 100%;
+}
+.bottom-item {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  height: 6vh;
+  width: 100vw;
+}
+.bottom-item .modular {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bottom-item .modular .modularImg {
+  width: 24px;
+  height: 24px;
+}
+.bottom-item .modular .modularImg img {
+  height: 100%;
+  width: 100%;
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url("./fonts/icomoon.eot?yisc3l");
+  src: url("./fonts/icomoon.eot?yisc3l#iefix") format("embedded-opentype"), url("./fonts/icomoon.woff2?yisc3l") format("woff2"), url("./fonts/icomoon.ttf?yisc3l") format("truetype"), url("./fonts/icomoon.woff?yisc3l") format("woff"), url("./fonts/icomoon.svg?yisc3l#icomoon") format("svg");
+}
+.bignumber {
+  font-family: 'icomoon' !important;
+}
+.bignumber1::before {
+  content: "\30";
+}
+.bignumber2::before {
+  content: "\32\37";
+}
+.bignumber3::before {
+  content: "\31\35";
+}
+.bignumber4::before {
+  content: "\31\30\32\37\37\38";
+}
