@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>kiss</title>
+</head>
+<body>
+  <!-- div块级容器自动占据一行 -->
+  <!-- 固定kiss的位置 -->
+  <div class="container">
+    <!-- div 是块级容器 -->
+    <!-- 固定左边的人 -->
+    <div class="ball" id="l-ball">
+      <!-- 固定左边人的面部情况 -->
+      <div class="face face-l">
+        <!-- 固定左边左眼-->
+        <div class="eye eye-l"></div>
+        <!-- 固定右眼 -->
+        <div class="eye eye-r"></div>
+        <!-- 固定嘴巴 -->
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <!-- 固定右边的人 -->
+    <div class="ball" id="r-ball">
+      <!-- 固定右边的人的面部 -->
+      <div class="face face-r">
+        <!-- 左眼 定义两个类名 因为与上面左人的eye大体属性一样需要微调于是定义更多的类来微调-->
+        <div class="eye eye-l eye-r-p"></div>
+        <!-- 右眼 -->
+        <div class="eye eye-r eye-r-p"></div>
+        <!-- 嘴巴 -->
+        <div class="mouth mouth-r"></div>
+        <!-- kiss时嘴巴 -->
+        <div class="kiss-m">
+          <div class="kiss"></div>
+          <div class="kiss"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
