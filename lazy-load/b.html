@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b{
+            height: 2000px;
+            width: 200px;
+        }
+        .a{
+            margin: 300px;
+            /* padding: 300px; */
+            /* position: sticky; */
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            /* position: absolute; */
+            /* top: 0px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="b">
+        <div class="a"></div>
+    </div>
+    <script>
+        
+        window.addEventListener('scroll',function(){
+            const a = document.querySelector('.a')
+            const size = a.getBoundingClientRect()
+            console.log(size.top)
+            console.log(window.scrollY)
+            size.top=window.scrollY
+        })
+    </script>
+</body>
+</html>
