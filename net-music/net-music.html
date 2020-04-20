@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+
+        }
+
+        .a {
+            background: url('1.jpg');
+            background-size: cover;
+        }
+
+        .content {
+            position: relative;
+            top: 50vh;
+            left: 10vw;
+            opacity: 0;
+            transform: translateY(6px);
+            /* text-align: center; */
+        }
+
+        p {
+            line-height: 2;
+        }
+
+        span {
+            color: red
+        }
+
+        .swiper-slide.swiper-slide-active .content {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 3s;
+        }
+
+        .aixin {
+            width: 0;
+
+            height: 0;
+
+            border-top: 100px solid orangered;
+
+            border-left: 50px solid transparent;
+
+            border-right: 50px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide a">
+                <div class="content">
+                    <p>在新的一年里你一共听了<span>3996</span>首歌</p>
+                    <p>最晚的一天听到了<span>3.20am</span></p>
+                    <p>收听最多的一首歌<span>《爱在西元前》</span></p>
+                    <p>祝你在新的一年心想事成</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="aixin">
+
+                </div>
+            </div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"> </script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'vertical', // 垂直切换选项    
+        })
+    </script>
+</body>
+
+</html>
