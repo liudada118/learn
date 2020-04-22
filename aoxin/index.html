@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            /* font-size: 0; */
+        }
+
+        .aixins {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .aixin {
+            height: 50vh;
+            width: 50vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aileftTop {
+            width: 50px;
+            height: 50px;
+            bottom: -25px;
+            right: 0;
+            border-radius: 25px;
+            background-color: black;
+            position: absolute;
+        }
+
+        .airightTop {
+            width: 50px;
+            height: 50px;
+            left: 0;
+            bottom: -25px;
+            border-radius: 25px;
+            background-color: black;
+            position: absolute;
+        }
+
+        .aileftBottom {
+            height: 60px;
+            width: 50px;
+            top: 0;
+            right: 0;
+            position: absolute;
+        }
+
+        .airightBottom {
+            position: absolute;
+            height: 60px;
+            width: 50px;
+            top: 0;
+            left: 0;
+        }
+
+        .leftBottom {
+            width: 0;
+            height: 0;
+            border-top: 65px solid black;
+            border-left: 50px solid transparent;
+
+        }
+
+        .rightBottom {
+            width: 0;
+            height: 0;
+            border-top: 65px solid black;
+            border-right: 50px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="aixins">
+        <div class="aixin">
+            <div class="aileftTop">
+                <div class="leftTop"></div>
+            </div>
+        </div>
+        <div class="aixin">
+            <div class="airightTop">
+                <div class="rightTop"></div>
+            </div>
+        </div>
+        <div class="aixin">
+            <div class="aileftBottom">
+                <div class="leftBottom"></div>
+            </div>
+        </div>
+        <div class="aixin">
+            <div class="airightBottom">
+                <div class="rightBottom"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
