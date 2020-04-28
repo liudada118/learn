@@ -9,7 +9,7 @@
 
 <body>
     <div class="warpper">
-
+        <div class="dianzan" style="display: inline-block;"></div>
     </div>
     <script>
         class LikeButton {
@@ -29,18 +29,21 @@
         }
 
         const warpper = document.querySelector('.warpper')
+        const div = document.querySelector('.dianzan')
         const likeButton = new LikeButton();
         // const linkText = document.querySelector('.link-text')
-        warpper.innerHTML = likeButton.render()
+        div.innerHTML = likeButton.render()
         const a = function(event) {
             console.log(event)
             this.state.isLiked = !this.state.isLiked
             console.log(this.state.isLiked)
-            warpper.innerHTML='none'
-            warpper.innerHTML = likeButton.render()
+            div.innerHTML='none'
+            div.innerHTML = likeButton.render()
         }
-        warpper.addEventListener('click', function(event) {
-            if(event.target==span||event.target==button){a.call(likeButton,'event')}
+        div.addEventListener('click', function(event) {
+            // console.log(event.target==span.link-text)
+            // if(event.target==span||event.target==button)
+            a.call(likeButton,'event')
             
         },false)
     </script>
