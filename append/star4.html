@@ -7,7 +7,7 @@
 </head>
 <body>
   <!-- DOM 挂载点 -->
-  <div class="wrapper"></div>
+  <div class="wrapper" ></div>
   <script>
   // 中央空调
   const createDOMFromString = (domString) => {
@@ -28,10 +28,11 @@
     }
     render() {
       this.el = createDOMFromString(`
-        <button id='like-btn'>
-          <span class='like-text'>点赞${this.n.n}</span>
+        <button id='like-btn' >
+          <span class='like-text' >点赞${this.n.n}</span>
         </button>
       `);
+      // style="color:${this.n.n?blue:black}"
       this.el.addEventListener('click', this.changeLikeText.bind(this), false);
       return this.el;
     }
@@ -48,8 +49,10 @@
       const oldEl = this.el; //前任
       const parent = this.el.parentNode;
       this.n.n=this.n.n+this.number.i
+      
+      
        // 找到父节点
-      console.log(parent);
+      // console.log(parent);
       this.number = number;
       
     //   this.n=n // 数据属性
@@ -57,6 +60,9 @@
       // 灵感， 业务能力
       parent.insertBefore(this.el, oldEl); // insertBefore 
       parent.removeChild(oldEl); // react  移除节点
+      const likeBtn = this.el.querySelector('#like-btn')
+      console.log(this.el)
+      likeBtn.style.color = this.n.n?"red":"black"
     }
   }
   
