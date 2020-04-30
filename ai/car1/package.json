@@ -1,0 +1,15 @@
+{
+  "name": "car1",
+  "version": "0.0.1",
+  "description": "车的检测",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "node"
+  ],
+  "author": "liuda",
+  "license": "ISC"
+}

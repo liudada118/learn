@@ -1,3 +1,2 @@
-const getArea = (w :number , h :number) :number => w * h
-// getArea(1,2)
-console.log(getArea(1,2))
+const area = (w:number,h:number) :number => w*h
+console.log(area(1,1))

@@ -1,0 +1,219 @@
+body{
+  /* 背景颜色 */
+  background-color: #78e08f;
+  /* 因为浏览器默认给body margin外边距属性 在此设置为0 */
+  margin: 0;
+}
+
+.container {
+  margin: 0;
+  /* 设置定位属性为absolute 绝对定位 相对父级有position属性定位  如果没有便相对body */
+  position: absolute;
+  /* body的离上面顶端body的50%远 右一样 */
+  top: 50%;
+  left: 50%;
+  /* 设置宽为232px */
+  width: 232px;
+  /* margin-left: -116px; */
+  /* 平移相对于自己的长度的百分比 */
+  transform: translate(-50%, -50%);
+  /* 字间距  字体大小 */
+  /* 容器之间默认生成间距为了让子级元素之间没有间距设置font-size为0 */
+  font-size: 0;
+}
+
+.ball{
+  /* 边框 8px 实线 */
+  border: 8px solid;
+
+  width: 100px;
+  height: 100px;
+  /* 将尖角设置为圆角  就是边长的50% */
+  border-radius: 50%;
+  background-color: #fff;
+  /* 使本级为行内块元素 */
+  display: inline-block;
+  /* 居头部对齐 */
+  vertical-align: top;
+  /* 相对定位  相对于自己本身定位也方便子级相对于自己定位 */
+  position: relative;
+}
+
+.face{
+  width: 70px;
+  height: 30px;
+  /* 绝对定位相对父级ball定位 */
+  position: absolute;
+  right: 0;
+  top: 30px;
+  /* 边框右顶角变圆半径为15px */
+  border-top-right-radius: 15px;
+}
+/* 伪元素与after是一对 从名字来说就是隐含的素数 可以相当于一个块级元素 */
+.face::before {
+  /* 必要属性 */
+  content: "";
+  width: 18px;
+  height: 8px;
+  background-color: #badc58;
+  /* 相对于父级face定位 */
+  position: absolute;
+  right: -8px;
+  top: 20px;
+  /* 边框四个角都变成圆 */
+  border-radius: 50%;
+}
+/* 伪元素与before是一对 */
+.face::after {
+  /* 必要属性 */
+  content: "";
+  width: 18px;
+  height: 8px;
+  background-color: #badc58;
+  position: absolute;
+  left: -5px;
+  top: 20px;
+  border-radius: 50%;
+}
+
+.eye{
+  width: 15px;
+  height: 14px;
+  /* 四角变圆 */
+  border-radius: 50%;
+  /* 只显示底面的边框 */
+  border-bottom: 5px solid #000;
+    /* 相对于父级face定位 */
+  position: absolute;
+}
+
+.eye-l {
+  left: 10px;
+}
+.eye-r {
+  right: 5px;
+}
+
+.mouth {
+  width: 30px;
+  height: 14px;
+  border-radius: 50%;
+  border-bottom: 5px solid #000;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  /* 加不加无所谓 */
+  margin: 0 auto;
+  transform: translate(3px);
+}
+
+.face-r {
+  left: 0;
+  top: 37px;
+}
+.face-r::before{
+  width: 10px;
+  height: 10px;
+  right: -4px;
+}
+.face-r::after{
+  width: 10px;
+  height: 10px;
+  left: 5px;
+}
+.eye-r-p{
+  /* 显示上边框 */
+  border-top: 5px solid #000;
+  /* 由于上面的eye设置了border-bottom现在这里不需要于是微调一下 */
+  border-bottom: none;
+}
+
+.kiss-m{
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  /* 实心度 为0就是透明 */
+  opacity: 0;
+}
+/* 因为kiss是两个块级元素所以不重叠有两个小月亮变成嘟嘴 */
+.kiss{
+  width: 13px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  border-left: 5px solid #000;
+}
+
+#l-ball{
+  animation: close 4s ease infinite;
+  /* 因为当两个元素出现重叠的时候左边的人在下面所以设置一下层级于是重叠便在上面了 */
+  z-index: 50;
+  /* overflow: hidden; */
+}
+
+.face-l{
+  /* 引用face动画 4s完成 相对于匀速开始结束慢 无限循环 */
+  animation: face 4s ease infinite;
+}
+#r-ball{
+  animation: p 4s ease infinite;
+  /* 绕着某个点旋转 */
+  transform-origin: 50% 100%;
+}
+.kiss-m{
+  animation: kiss-m 4s ease infinite;
+}
+.mouth-r{
+  animation: mouth 4s ease infinite;
+}
+@keyframes mouth{
+  /* 初始时候的实心度 */
+  0%{opacity: 1;}
+  62%{opacity: 1;}
+  76.7%{opacity: 1;}
+  76.8%{opacity: 0;}
+  79.7%{opacity: 0;}
+  79.8%{opacity: 1;}
+  100%{opacity: 1;}
+}
+@keyframes kiss-m{
+  0%{opacity: 0;}
+  62%{opacity: 0;}
+  76.8%{opacity: 0;}
+  76.9%{opacity:1;}
+  79.8%{opacity: 1;}
+  79.9%{opacity: 0;}
+  100%{opacity: 0;}
+}
+
+@keyframes p{
+  /* 初始时候   位移位置变化  角度为0 */
+    0%{ transform: rotate(0);}
+    55%{ transform: rotate(0);}
+    62%{transform: rotate(30deg); }
+    /* 75%{transform: rotate(0);} */
+    77%{transform:translate(-33px) rotate(0);}
+    80%{transform:translate(-33px) rotate(0);}
+    90%{transform:translate(0) rotate(0);}
+    100%{transform: translate(0);rotate: 0;}
+}
+
+@keyframes close{
+  0%{ transform: translate(0);}
+  20%{ transform: translate(20px);}
+  35%{ transform: translate(20px);}
+  55%{ transform: translate(0);}
+  100%{ transform: translate(0);}
+}
+
+@keyframes face{
+  0%{ transform: translate(0) rotate(0);}
+  10%{ transform: translate(0) rotate(0);}
+  20%{ transform: translate(5px) rotate(-2deg);}
+  28%{ transform: translate(0px) rotate(0);}
+  35%{ transform: translate(5px) rotate(-2deg);}
+  50%{ transform: translate(0) rotate(0);}
+  100%{ transform: translate(0) rotate(0);}
+}
+

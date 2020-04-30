@@ -1,3 +1,2 @@
-var getArea = function (w, h) { return w * h; };
-// getArea(1,2)
-console.log(getArea(1, 2));
+var area = function (w, h) { return w * h; };
+console.log(area(1, 1));

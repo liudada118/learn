@@ -1,0 +1,99 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* . 类选择器 */
+        .body{
+            background: url("./cat/maoshenti.png");
+            width:117px;
+            height:201px;
+            position: relative;
+            z-index: 50;
+            /* 水平居中 垂直居中*/
+            /* absolute 绝对定位，相对于父级第一个设置了定位元素属性的元素来定位，如果没有 就相对于body定位 */
+            /* left: 50%;
+            top: 50%;
+            相对于自己
+            transform:translate3d(-50%,-50%,0); */
+        }
+        .cat{
+            width:117px;
+            height:600px;
+            /* 水平居中 垂直居中*/
+            /* absolute 绝对定位，相对于父级第一个设置了定位元素属性的元素来定位，如果没有 就相对于body定位 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 相对于自己 */
+            transform:translate3d(-50%,-50%,0);
+        }
+        .weiba {
+            background: url("./cat/maowei.png");
+            width: 64px;
+            height: 194px;
+            /* margin: auto; */
+            position: relative;
+            top: 15px;
+            animation: ani 3s ease-in-out infinite alternate;
+            transform-origin: 100% 100%;
+        }
+        .maozhua{
+            background: url("./cat/maozhua.png");
+            width: 34px;
+            height: 81px;
+            position: relative;
+            /* margin: auto;
+            transform: translate(30px,240px); */
+            top: -15px;
+            left: 65px;
+            animation: ani 3s ease-in-out infinite alternate;
+            transform-origin: 0 0;
+        }
+        .maoyan1{
+            background: url("./cat/maoyan1.png");
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            top: 173px;
+            left: 75px;
+        }
+
+        .maoyan2{
+            background: url("./cat/maoyan2.png");
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            top: 182px;
+            left: 93px;
+        }
+        .maozui{
+            background: url("./cat/maozui.png");
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            top: 188px;
+            left: 80px;
+        }
+        @keyframes ani{
+            100%{
+                transform: rotate(-5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cat">
+        <div class="weiba"></div>
+         <div class="body">
+             <div class="maoyan1"></div>
+             <div class="maoyan2"></div> 
+             <div class="maozui"></div>  
+        </div>
+        
+        <div class="maozhua"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="www.baidu.com" class="form" name="myform">
+        <div>
+            <label for="username">用户名</label>    
+            <input type="text" placeholder="请输入用户名" id="username" name="username">
+        </div>
+        <div>
+            <label for="psw">密码</label>    
+            <input type="text" placeholder="请输入密码" id="psw" name="psw">
+        </div>
+        <div>
+            <label for="repsw">用户名</label>    
+            <input type="text" placeholder="请输入密码" id="repsw" name="repsw">
+        </div>
+        <div>
+            <label for="sex">性别</label>
+            <label for="nan">男</label>
+            <input type="radio" name="sex" id="nan" value="nan" checked>
+            <label for="nv">女</label>
+            <input type="radio" name="sex" id="nv" value="nv">
+        </div>
+        <div>
+            <label for="hobby">爱好</label>
+            <select name="hobby" id="hobby">
+                <option value="dog" selected>dog</option>
+                <option value="cat">cat</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">提交</button>
+        </div>
+        <div>
+            <span>用户名：123</span>
+            <span>密码：4546</span>
+            <span>sex：nan</span>
+            <span>hobby：dog</span>
+          </div>
+    </form>
+    <script>
+        // 获取class为myform的属性定义给form常量
+        const form = document.forms.myform
+        console.log(form);
+        // 定义常量hobby为form中name为hobby的值
+        const hobby = form.hobby.value
+        console.log(hobby);
+        const sex = form.sex.value
+        // 向控制台输出
+        console.log(sex);
+        // 向文档中添加句柄
+        // function(event)中的event相当于一个形式参数  因为执行submit是表单自动跳转到百度  因为form.action为百度  这个跳转的时间变为了形参
+        form.addEventListener( 'submit' , function(event) {
+            console.log('提交了');
+            // 阻止事件函数
+            event.preventDefault();
+            const username = form.username.value;
+            const psw =form.psw.value;
+            const repsw=form.repsw.value;
+            const sex=form.sex.value;
+            const hobby= form.hobby.value;
+            // trim去空格
+            if(username.trim().length===0)
+            {
+                alert('username不能为空');
+                return;
+            }
+            if(repsw.trim()!==psw)
+            {
+                alert('两次输入密码不一样');
+                return;
+            }
+            // document.createElement('div') 创建一个
+            const div = document.createElement('div');
+            //  div.innerHTML设置属性
+            div.innerHTML=`
+            <span>用户名：${username}</span>
+            <span>密码：${psw}</span>
+            <span>sex：${sex}</span>
+            <span>hobby：${hobby}</span>
+            `
+            // 向body插入创建好的div常量
+            document.body.appendChild(div)
+        })
+    </script>
+</body>
+</html>

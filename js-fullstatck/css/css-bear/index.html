@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>    
+            /* 设置主div的位置大小 */
+        .view{
+
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            /* background-color: red; */
+        }
+        /* 设置html的字体大小 */
+        .html{
+            font-size: 37.5px;
+        }
+        /* 设置bear的位置 */
+        .bear{
+            /* rem相对单位 
+            相当于html的font-size
+            6.5*37.5px */
+            /* 设置宽rem相对单位 相当于设置的大小乘以html的font-size */
+            width: 6.5rem;
+            /* 设置长 */
+            height: 1.89rem;
+            /* 设置属性的定位类型 */
+            position: relative;
+            /* 设置bear的位置为中间 */
+            margin-right: auto;
+            margin-left: auto;
+            /* background-color: green; */
+            
+        }
+        /* 设置bear的图片 */
+        .bear-img{
+            /* 图片路径 */
+            background: url(http://s1.map.bdimg.com/zt/y2015/waimaibear/mobile/images/rider1_1b78925.png);
+            /* 设置长 */
+            width: 2.4rem;
+            /* 设置宽 */
+            height: 1.89rem;
+            /* 设置位置相当于顶部位置与父级位置的上面距离为0 */
+            top: 0;
+            /* 设置位置相当于右边位置与父级位置的右边距离为0 */
+            right: 0;
+            /* 设置属性的定位类型 */
+            position: absolute;
+            /* 设置背景图片的大小 */
+            background-size: 100% 100%;
+            /* 向前 1s完成 直线  不回头 */
+            /* 设置图片的动画 1s完成 直线 不回头*/
+            animation: riderDrive 1s linear forwards ;
+        }
+        /* 设置进度条的边框 */
+        .progress{
+            /* 设置长宽 */
+            width: 6.25rem ;
+            height: 0.245rem;
+            /* 边框 大小2px 实线 黑色 */
+            /* 设置边框大小 类型 颜色 */
+            border: 2px solid black;
+            /* 圆边半径 */
+            /* 设置边框两边的曲线弧 */
+            border-radius: 0.5rem;
+            /* 设置边框的位置 */
+            margin-right: auto;
+            margin-left: auto;
+            /* 超出隐藏 */
+            overflow: hidden;
+        }
+        /* 设置进度条 */
+        .progress-red{
+            /* 设置进度条颜色 */
+            background-color: red;
+            /* 设置进度条大小 */
+            width: 25%;
+            height: 100%;
+            /* 设置进度条初始位置 */
+            margin-left: auto;
+            /* float: right; */
+            /* animation: progress 1s linear forwards; */
+        }
+        /* @keyframes progress {
+            0%{
+                width: 0%;
+            }
+            100%
+            {
+                width: 100%;
+            }
+        } */
+        /* 定义一个riderDrive动画 */
+        @keyframes riderDrive {
+            /* 总共0-100%完成动画 
+            百分之多少就是设置的多少帧的位置
+            */
+
+                        0% {
+            transform: translate3d(0, 0, 0);
+            }
+
+            4% {
+            transform: translate3d(0, -.125rem, 0);
+            }
+
+            8% {
+            transform: translate3d(0, 0, 0);
+            }
+
+            16% {
+            transform: translate3d(-.4rem, -.125rem, 0);
+            }
+
+            24% {
+            transform: translate3d(-.8rem, 0, 0);
+            }
+
+            32% {
+            transform: translate3d(-1.2rem, -.125rem, 0rem)
+            }
+
+            40% {
+            transform: translate3d(-1.6rem, 0rem, 0rem)
+            }
+
+            48% {
+            transform: translate3d(-2rem, -.125rem, 0rem)
+            }
+
+            56% {
+            transform: translate3d(-2.4rem, 0rem, 0rem)
+            }
+
+            64% {
+            transform: translate3d(-2.8rem, -.125rem, 0rem)
+            }
+
+            72% {
+            transform: translate3d(-3.2rem, 0rem, 0rem)
+            }
+
+            80% {
+            transform: translate3d(-3.6rem, -.125rem, 0rem)
+            }
+
+            88% {
+            transform: translate3d(-4rem, 0rem, 0rem)
+            }
+
+            96% {
+            transform: translate3d(-4.2rem, -.125rem, 0rem)
+            }
+
+            100% {
+            transform: translate3d(-4.2rem, 0rem, 0rem)
+}
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 设置整个项目的位置 -->
+    <div class="view">
+        <!-- 设置熊的位置 -->
+        <div class="bear">
+            <div class="bear-img"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-red"></div>
+        </div>
+    </div>
+    <script>
+        // 定义一个常量progress为获取html中第一个class为progress-red的元素
+        const progress =document.querySelector('.progress-red');
+        // 定义一个变量width为0
+        let width=0;
+        // 使用setinterval方法来按照指定的周期来调用函数 设计一个进度条函数 进度随时间的增加而增加 
+        // setinterval(function(),n(数字))意思就是每n毫秒执行一次函数function
+        let interval = setInterval(function()  {
+            // 定义一个变量width=width+10的表达式  意思就是每过n毫秒该表达式执行一次
+            width+=10;
+            if (width>100)
+            {
+                // 因为setinterval会一直执行 所以设置一个clearinterval来停止执行setinterval 当执行clearinterval时 setinterval停止 return退出
+                clearInterval(interval);
+                return;
+            }
+            // progress为从progress-red获得的元素， progress.style.width为 class为progress-red的width
+            // width+'%'变成字符串 n%
+            progress.style.width = width+'%';
+        }, 100);
+    </script>
+</body>
+</html>

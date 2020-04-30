@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DrumKit</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="keys">
+    <div class="key">
+      <div class="keytext">A</div>
+      <span class="sound">CLAP</span>
+    </div>
+    <div class="key">
+      <div class="keytext">S</div>
+      <span class="sound">HIHAT</span>
+    </div>
+    <div class="key">
+      <div class="keytext">D</div>
+      <span class="sound">KICK</span>
+    </div>
+    <div class="key">
+      <div class="keytext">F</div>
+      <span class="sound">OPENHAT</span>
+    </div>
+    <div class="key">
+      <div class="keytext">G</div>
+      <span class="sound">BOOM</span>
+    </div>
+    <div class="key">
+      <div class="keytext">H</div>
+      <span class="sound">RIDE</span>
+    </div>
+    <div class="key">
+      <div class="keytext">J</div>
+      <span class="sound">SNARE</span>
+    </div>
+    <div class="key">
+      <div class="keytext">K</div>
+      <span class="sound">TOM</span>
+    </div>
+    <div class="key">
+      <div class="keytext">L</div>
+      <span class="sound">TINK</span>
+    </div>
+  </div>
+  <!-- 声音 -->
+  <audio src="sounds/clap.wav" data-key="65"></audio>
+  <audio src="sounds/hihat.wav" data-key="83"></audio>
+  <audio src="sounds/kick.wav" data-key="68"></audio>
+  <audio src="sounds/openhat.wav" data-key="70"></audio>
+  <audio src="sounds/boom.wav" data-key="71"></audio>
+  <audio src="sounds/ride.wav" data-key="72"></audio>
+  <audio src="sounds/snare.wav" data-key="74"></audio>
+  <audio src="sounds/tom.wav" data-key="75"></audio>
+  <audio src="sounds/tink.wav" data-key="76"></audio>
+  <script>
+  const allKey = document.querySelectorAll('.key')
+  const keyTexts = document.querySelectorAll('.keytext')
+  const playSound = function(event) {
+    
+    let keyCode = event.keyCode; 
+    // js 按键事件 就有的
+    console.log(event)
+    const ele = document
+      .querySelector(`audio[data-key="${keyCode}"]`)
+    console.log(ele);
+    if (ele) {
+      ele.play();
+     
+      keyTexts.forEach(function(keyText){ //将keyTexts中所有的元素循环一遍
+        
+        if(keyText.innerText === String.fromCharCode(keyCode)){//如果keyText里面的内容等于keycode的ASCII码转化后的内容时
+          
+          keyText.parentElement.classList.add('show')// 向父容器添加一个show属性
+        }
+      })
+    }
+  } 
+  window.addEventListener('keydown', playSound)
+  let upSound = function(event){
+    let keyCode1=event.keyCode;
+    keyTexts.forEach(function(keyText){
+    if(keyText.innerText === String.fromCharCode(keyCode1)){
+          // console.log(keyText.parentElement)
+          keyText.parentElement.classList.remove('show')
+        }
+      })
+  }
+  window.addEventListener('keyup',upSound)
+  </script>
+</body>
+</html>
