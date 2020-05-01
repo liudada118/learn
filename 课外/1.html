@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = {
+            name : aa,
+            sex : bb,
+            a : {
+                b:{
+                    c:1
+                }
+            }
+        }
+        let sor = function (arr){
+            let res = {}
+            for (let key in arr){
+                if (typeof res[key] === 'Object'){
+                    res[key] = {...arr1[key]}
+                }
+                else {
+                    res[key]={...arr1[key]}
+                }
+            }
+        }
+    </script>
+</body>
+</html>
