@@ -1,50 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+var age = 10;
+var person={
+   age:20,
+   getAge(){
+       var age = 30;
+       return this.age;
+    },
+};
+alert(age,age*2);
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+console.log( person.getAge()); 
 
-<body>
-  <nav>
-    <ul class="menu">
-      <li><a href="">Home</a></li>
-      <li><a href="">Order Status</a></li>
-      <li><a href="">Tweets</a></li>
-      <li><a href="">Read Our History</a></li>
-      <li><a href="">Contact Us</a></li>
-    </ul>
-  </nav>
+var b = person.getAge;
+console.log(b()); 
 
-  <div class="wrapper">
-    <p>Lorem ipsum dolor sit amet, <a href="">consectetur</a> adipisicing elit. Est <a href="">explicabo</a> unde natus
-      necessitatibus esse obcaecati distinctio, aut itaque, qui vitae!</p>
-    <p>Aspernatur sapiente quae sint <a href="">soluta</a> modi, atque praesentium laborum pariatur earum <a
-        href="">quaerat</a> cupiditate consequuntur facilis ullam dignissimos, aperiam quam veniam.</p>
-    <p>Cum ipsam quod, incidunt sit ex <a href="">tempore</a> placeat maxime <a href="">corrupti</a> possimus <a
-        href="">veritatis</a> ipsum fugit recusandae est doloremque? Hic, <a href="">quibusdam</a>, nulla.</p>
-    <p>Esse quibusdam, ad, ducimus cupiditate <a href="">nulla</a>, quae magni odit <a href="">totam</a> ut consequatur
-      eveniet sunt quam provident sapiente dicta neque quod.</p>
-    <p>Aliquam <a href="">dicta</a> sequi culpa fugiat <a href="">consequuntur</a> pariatur optio ad minima, maxime <a
-        href="">odio</a>, distinctio magni impedit tempore enim repellendus <a href="">repudiandae</a> quas!</p>
-  </div>
-</body>
- <script>
-     const hightLight = document.createElement('div')
-     hightLight.classList.add('bgc')
-     const a = document.querySelectorAll('a')
-     document.body.appendChild(hightLight)
-     a.forEach(function(node){
-         node.addEventListener('mouseenter',function(event){
-             const size = node.getBoundingClientRect()
-            // console.log(size)
-            hightLight.style.width = size.width+'px'
-            hightLight.style.height = size.height + 'px'
-            hightLight.style.transform = `translateX(${size.left}px) translateY(${size.top}px)`
-         })
-     })
- </script>
-</html>
+console.log((person.getAge)()); 
+
+console.log((1,person.getAge)());
+
+console.log((1,person.getAge.bind(person))());
+
+console.log((person.getAge,person.getAge)());
+
+console.log((person.getAge=person.getAge)());
+
+console.log(person.getAge.call()); 
+
+console.log(person.getAge.call(person));
+
+function getAge2() {
+    this.age = 40;
+    console.log(person.getAge());
+};
+getAge2();
+console.log(age);
+
+function getAge3(){
+    this.age = 50;
+    this.getAge4 = ()=>{
+        console.log(person.getAge.call(this));
+    }
+}
+new getAge3().getAge4();
+console.log(age);
+
+function getAge4(){
+    this.age = 60;
+    this.getAge5 = ()=>{
+    console.log(person.getAge.call(this));
+    }
+}
+new getAge4().getAge5();
+console.log(age);
+
+var age2 = 10;
+var person2={
+   age2:20,
+   getAge2:()=>{
+       var age2 = 30;
+       return this.age2;    
+    },
+};
+console.log(person2.getAge2.call());
+console.log(person2.getAge2.call(person2));
+</script>
