@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./box.css"> -->
+    <style>
+        :root {
+            --bg-color: green;
+            --base-size: 10;
+        }
+
+        .box {
+            /* 占据90% -10px 宽 */
+            width: calc(var(--base-size) * 10px);
+            height: calc(var(--base-size) * 5px);
+            background-color: var(--bg-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    const root = document.querySelector(':root')
+      refresh();
+  window.onresize = function () {  //监听屏幕的改变
+      refresh();
+  };
+
+  function refresh() {
+    let devicewidth = document.documentElement.clientWidth;
+    console.log(devicewidth);
+    if (devicewidth <=500) {
+      root.setAttribute('style','--base-size: 8')
+    } else {
+        root.setAttribute('style','--base-size: 10')
+    }
+  }
+    // const box = document.querySelector('.box')
+    // const body = document.querySelector('body')
+    // console.log(screen)
+    // screen.addEventListener('change', function (screen) {
+    //     console.log(screen.width)
+    // })
+    // while(1){
+    // if (screen.width <= 500)
+    // {
+    //     document.write('<link rel=stylesheet type="text/css" href="css.css">')
+    // }
+    // else {document.write('<link rel=stylesheet type="text/css" href="css1030.css">')}
+    // }
+</script>
+
+</html>

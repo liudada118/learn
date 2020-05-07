@@ -1,0 +1,11 @@
+:root {
+    --bg-color: green;
+    --base-size: 8;
+}
+
+.box {
+    /* 占据90% -10px 宽 */
+    width: calc(var(--base-size) * 10px);
+    height: calc(var(--base-size) * 5px);
+    background-color: var(--bg-color);
+}
