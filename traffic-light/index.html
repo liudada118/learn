@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            height: 100px;
+            width: 100px;
+            margin-top: 100px;
+            border-radius: 50%;
+            background-color: #666;
+            list-style: none;
+        }
+        ul.stop li:nth-child(1){
+            background-color: red;
+        }
+        ul.man li:nth-child(2){
+            background-color: yellow;
+        }
+        ul.pass li:nth-child(3){
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        a = function(){
+           console.log(a) 
+        }
+        a()
+        const ul = document.querySelector('ul')
+        let p = function(){
+            return new Promise((resolve,reject) => {
+                setTimeout(function(){
+                    resolve()
+                },1000)
+        })
+        }
+        setInterval(() => {
+            light()
+        }, 3000);
+        light()
+        function light() {
+        p().then(function(){
+            ul.className = 'stop'
+            return p()
+        })
+        .then(function(){
+            ul.className = 'man'
+            return p()
+        })
+        .then(function(){
+            ul.className = 'pass'
+        })}
+    </script>
+</body>
+</html>
