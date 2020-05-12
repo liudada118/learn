@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warpper{
+            display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            width: 200px;
+            height: 300px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid blue;
+        }
+        img{
+            width: 90px;
+            height: 90px;
+        }
+        botton{
+            width: 60px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <script>
+        let news = [
+            {
+                photo: './4.jpg',
+                title: 'haha',
+                content: '舒服了'
+            },
+            {
+                photo: './4.jpg',
+                title: 'eeee',
+                content: '还可以'
+            },
+            {
+                photo: './4.jpg',
+                title: 'hhhh',
+                content: '就这'
+            }
+        ]
+        const body = document.querySelector('body')
+        console.log(body)
+        const div = document.createElement('div')
+        div.className = 'warpper'
+        body.appendChild(div)
+        
+        
+        
+        // <button class="buttonLast">上一页</button>
+        // <button class="buttonNext">下一页</button>
+        const buttonNext = document.createElement('button')
+        const buttonLast = document.createElement('button')
+        buttonLast.innerText = '上一页'
+        buttonNext.innerText = '下一页'
+        div.appendChild(buttonLast)
+        div.appendChild(buttonNext)
+        let i = 0
+        buttonLast.addEventListener('click',function(){
+            i--
+            if(i<0){
+                alert('第一页')
+                return i = 0
+            }
+            else{ div.innerHTML = `
+        <img src="${news[i].photo}" alt="">
+        <div>${news[i].title}</div>
+        <div>${news[i].content}</div>
+        
+        `
+        // <button>上一页</button>
+        // <button>下一页</button>
+    } console.log(i) 
+        })
+        buttonNext.addEventListener('click',function(){
+            i++
+            if(i>news.length){
+                alert('最后一页')
+                return i = news.length
+            }
+            else{ div.innerHTML = `
+        <img src="${news[i].photo}" alt="">
+        <div>${news[i].title}</div>
+        <div>${news[i].content}</div>
+        <button>上一页</button>
+        <button>下一页</button>
+        `
+    }console.log(i)  
+        })
+        div.innerHTML = `
+        <img src="${news[i].photo}" alt="">
+        <div>${news[i].title}</div>
+        <div>${news[i].content}</div>
+        
+        `
+    </script>
+</body>
+
+</html>
