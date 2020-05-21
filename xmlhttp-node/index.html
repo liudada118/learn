@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>hello world</h2>
+    <script>
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST','/getpost',true)
+        xhr.timeout = 2000
+        xhr.setRequestHeader('X-Real-IP', '211.161.244.70')
+        xhr.addEventListener('timeou',function(){
+            console.log('timeout')
+        })
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState === 4){
+                console.log(xhr.response)
+            }
+        }
+        // xhr.addEventListener('readystatechange',function(){
+        //     if(xhr.readyState === 4){
+        //         console.log(xhr.response)
+        //     }
+        // })
+        // xhr.send('q=js&type=all')
+        let obj = {
+            query : 'js',
+            type : 'all'
+        }
+        xhr.send(JSON.stringify(obj))
+    </script>
+</body>
+</html>
