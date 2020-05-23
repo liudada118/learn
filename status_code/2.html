@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="clickCouner()">点击</button>
+    <div class="result"></div>
+    <script>
+        function clickCouner(){
+       const result = document.querySelector('.result')
+       if(typeof Storage !== 'undefined'){
+           if(localStorage.clickCouner){
+            localStorage.clickCouner=Number(localStorage.clickCouner)+1
+           }
+           else{
+            localStorage.clickCouner=1
+           }
+           result.innerHTML = `${localStorage.clickCouner}`
+       }
+       else{
+           result.innerHTML ='null'
+       }}
+    </script>
+</body>
+</html>
