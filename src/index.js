@@ -1,11 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // index.js  入口文件
-import CommentApp from './CommentApp'; // 模块机制 
-import './index.css'
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
 ReactDOM.render(
-  // react 的逐渐世界
-  <CommentApp />,
-  // 奈何桥畔， 孟婆  DOM document.createElement
-  // 真实DOM
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
-)
+);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
