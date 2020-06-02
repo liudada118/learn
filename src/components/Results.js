@@ -2,7 +2,6 @@ import React from "react";
 // StatefullComponent  StatelessComponent
 import Beer from "./Beer";
 
-
 class Results extends React.Component {
   render() {
     if (this.props.loading) {
@@ -19,6 +18,5 @@ class Results extends React.Component {
     )
   }
 }
-
 
 export default Results;
