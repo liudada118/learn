@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+        }
+        div{
+            /* height: 100vh; */
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100vw;
+            height: 50vw;
+            line-height: 0;
+            background-color: blue;
+            text-align: center;
+            
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        A
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* vh rem em vw */
+      height: 100vh;
+    }
+
+    .ele {
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+      background-color: blue;
+      text-align: center;
+      width: calc(100vw - 20px);
+      /* width: 100%; */
+      /*  */
+      /* padding-top: 25%;
+      padding-bottom: 25%; */
+      /* padding-left: 10px;
+      padding-right: 10px; */
+      line-height: 0;    
+      height: calc(50vw - 10px);
+      
+      /* position: static; */
+    }
+    .out {
+      /* margin-left: 10px;
+      margin-right: 10px;
+      width: 100%;       */
+    }
+    /* out: 1220
+    1： 因为 ele 是 out 子元素，是不是和 out 等宽，也是 1220
+    ele 计算 padding-top 是不是相对于 out 这个包含块的宽度的，
+    有因为ele 和 out 等宽，可以理解为 
+    ele的高度 就是 宽度的一半了？
+     */
+    /* ele container block width 
+    1: static
+
+    */
+    /* 高度是宽度的一半 */
+
+  </style>
+</head>
+
+<body>
+  <!-- ele  -->
+  <div class="out">
+    <div class="ele">
+      A
+    </div>
+  </div>
+</body>
+
+</html>
