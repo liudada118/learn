@@ -1,21 +1,17 @@
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Main from './components/Main';
-import Single from './components/Single';
-import './style.css'; // 简单的话， 样式放一个文件
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-const Root = function() {
-  return (
-    <BrowserRouter>
-      <div>
-        <Route exact path="/" component={Main} />
-        <Route path="/search/:searchTerm" component={Main} />
-        {/* params {beerId:, beerSlug} */}
-        <Route path="/beer/:beerId/:beerSlug" component={Single}/>
-      </div>
-    </BrowserRouter>
-  )
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-render(<Root />, document.getElementById('root'))
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
