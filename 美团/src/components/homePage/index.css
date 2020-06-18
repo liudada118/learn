@@ -1,0 +1,142 @@
+.swiper-container{
+    height: 160px;
+    position: relative;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+}
+.s{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.s img{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: yellow;
+    align-items: center;
+}
+.address{
+    /* vertical-align: top; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.address-img{
+    height: 20px;
+    width: 20px;
+    /* display: inline-block; */
+    vertical-align: top;
+}
+.address-img img{
+    height: 100%;
+    width: 100%;
+}
+.notice-img{
+    height:20px;
+    width: 20px;
+}
+.notice-img img{
+    height: 100%;
+    height: 100%;
+}
+.main{
+    /* background-color: #fee; */
+    /* width: 96vw;
+    padding-left: 2vw;
+    padding-right: 2vw; */
+    border-radius: 40px;
+}
+.mainer{
+    width: 96vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 10vh;
+
+}
+.main-search{
+    height: 4vh;
+    width: 100%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    /* background-color: #eee; */
+}
+.main input{
+    width: calc(100% - 19px);
+    height: 100%;
+    border: 0px;
+    background-color: #eee;
+    border-radius: 2vh;
+    padding-left: 15px;
+}
+.main-recommend
+{
+    height: 3vh;
+    display: flex;
+    margin-bottom: 2vh;
+}
+.recommend-name{
+    /* flex: 1; */
+    text-align: center;
+    background-color: #eee;
+    margin-right: 2vw;
+    border-radius: 1.5vh;
+}
+.type{
+    height: 21vh;
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    border-radius: 10px;
+    background-color: #eee;
+    margin-bottom: 2vh;
+}
+.type-type{
+    flex:0 0 20%;
+    height: 7vh;
+    text-align: center;
+}
+.type-type .img{
+    height: 20px;
+    width: 20px;
+}
+.type-type .img img{
+    width: 100%;
+    height: 100%;
+}
+.list{
+    background-color: #eee;
+    border-radius: 10px;
+}
+.listhead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4vh;
+}
+.all-list{
+    display: flex;
+    flex-flow: row wrap;
+}
+.list-list{
+    height: 15vh;
+    flex: 0 0 calc(50% - 8px);
+    margin-left: 3px;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+.list-list .img{
+    width: 100%;
+    height: 10vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.list-list .img img{
+    width: 100%;
+    height: 100%;
+}
+
