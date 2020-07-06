@@ -1,0 +1,11 @@
+<script>
+    class myArr{
+        static a = 1 
+        static [Symbol.hasInstance](){
+            return false
+        }
+    }
+    let arr = new myArr()
+    console.log(myArr[Symbol.hasInstance])
+    console.log(arr instanceof myArr)
+</script>

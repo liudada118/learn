@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li+li {
+            border-bottom: 2px solid black;
+        }
+        ul li {
+            color: brown;
+        }
+        ul > li{
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+        <div>
+            <li>222</li>
+        </div>
+    </ul>
+    <script>
+        console.log(document.querySelector('li + li'))
+        let promise = Promise.resolve(1)
+        let promise1 = Promise.resolve(2)
+        let promise2 = Promise.resolve(3)
+        let promise3 = Promise.resolve(4)
+        let promise4 = Promise.resolve(5)
+        let promise5 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                 reject(5)
+            },500)
+           
+        })
+        Promise.all([promise1,promise2,promise3])  // 所有的成功最终的结果就成功 返回promise
+        .then(res=>{
+            console.log(res)
+        })
+        .catch()
+
+        // 怎么实现promise.all
+
+        // all(a){
+        //     if(a.forEach(()=>{
+
+        //     }))
+        // }
+
+        Promise.allSettled([promise1,promise2,promise3])  // 有的成功最终的结果就成功 返回promise 显示成功的
+        .then(res=>{
+            console.log(res)
+        })
+        .catch()
+        
+        Promise.race([promise1,promise2,promise5])   // 以第一个完成的状态作为最终的结果 返回promise
+        .then(res=>{
+            console.log(res)
+        })
+        .catch()
+
+    </script>
+</body>
+
+</html>
