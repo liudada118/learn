@@ -1,0 +1,120 @@
+<script>
+    // function orderWeight(strng) {
+    //     // your code
+    //     let arr = strng.split(' ')
+    //     arr.sort()
+    //     for (let i = 0; i < arr.length; i++) {
+    //         for (let j = i + 1; j < arr.length; j++) {
+    //             let a = 0, b = 0
+    //             for (let c of arr[i]) {
+    //                 a += JSON.parse(c)
+    //             }
+    //             for (let d of arr[j]) {
+    //                 b += JSON.parse(d)
+    //             }
+    //             if (a > b) {
+    //                 [arr[i], arr[j]] = [arr[j], arr[i]]
+    //             }
+    //             if (a == b) {
+    //                 for (let k = 0; k < arr[j].length; k++) {
+    //                     console.log(i,j,k,arr[i][k],arr[j][k])
+    //                     if (arr[i][k] > arr[j][k]) { 
+    //                         [arr[i], arr[j]] = [arr[j], arr[i]]
+    //                         break
+    //                     }
+    //                     if(arr[i][k] = arr[j][k]){
+    //                         continue
+    //                     }
+    //                     if(arr[i][k] < arr[j][k]){
+    //                         break
+    //                     }   
+
+    //                 }
+    //                 console.log(i,j)
+    //         }
+    //     }
+    // }
+    // return arr.join(' ')
+    // }
+
+    function orderWeight(strng) {
+        // your code
+        let arr = strng.split(' ')
+        arr.sort()
+        for (let i = 0; i < arr.length; i++) {
+            let a = 0
+            for (let c of arr[i]) {
+                a += JSON.parse(c)
+            }
+            console.log(arr)
+            for (let j = i + 1; j < arr.length; j++) {
+                let arr2 =[]
+                let b = 0
+                for (let d of arr[j]) {
+                    b += JSON.parse(d)
+                }
+                if(a == b){
+                    arr2.push(arr[i])
+                    arr2.push(arr[j])
+                    arr2.sort()
+                    arr[i] = arr2[0]
+                    arr[j] = arr2[1]
+                }
+                if (a > b) {
+                    [arr[i], arr[j]] = [arr[j], arr[i]]
+                    a = b
+                }
+                
+            }
+        }return arr
+    }
+    // console.log(
+        orderWeight( '100 111 120 40 8 54 91 164 147 67 176 430372 58052 351832 175432 271476 309754 404858 387087 295747 269974'
+)
+// )
+</script>
+
+
+<!-- https://www.codewars.com/kata/55c6126177c9441a570000cc/train/javascript -->
+
+
+
+<!-- function orderWeight(strng) {
+    const sum = (str)=>str.split('').reduce((sum,el)=>(sum+(+el)),0);
+     function comp(a,b){
+       let sumA = sum(a);
+       let sumB = sum(b);
+       return sumA === sumB ? a.localeCompare(b) : sumA - sumB;
+      };
+    return strng.split(' ').sort(comp).join(' ');
+   } -->
+
+   <!-- function orderWeight(str) {
+    const sum = x => x.split('').reduce((res, cur) => (res + +cur), 0);
+    return str.split(' ').sort((a, b) => {
+      const diff = sum(a) - sum(b);
+      return diff == 0 ? (a > b ? 1 : -1) : diff;
+    }).join(' ');
+  } -->
+
+  <!-- function orderWeight(strng) {
+    return strng
+      .split(" ")
+      .map(function(v) {  
+        return {
+          val: v,
+          key: v.split("").reduce(function(prev, curr) {
+            return parseInt(prev) + parseInt(curr);
+          }, 0)
+        };
+      })
+      .sort(function(a, b) {
+        return a.key == b.key 
+          ? a.val.localeCompare(b.val)
+          : (a.key - b.key);
+      })
+      .map(function(v) {
+        return v.val;
+      })
+      .join(" ");
+  } -->
