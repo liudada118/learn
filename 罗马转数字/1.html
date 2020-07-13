@@ -1,0 +1,15 @@
+<script>
+    var romanToInt = function(s) {
+    let arr = ['CM','CD','XL','XC','IV','IX','M','D','C','L','X','V','I']
+    let arr1 = [900,400,40,90,4,9,1000,500,100,50,10,5,1]
+    let a = 0
+    let b = s.length
+    for(let i = 0 ; i<arr.length;i++){
+        if(!s.includes(arr[i])) continue
+        s = s.split(arr[i]).join('')
+        a += ((b-s.length)/arr[i].length)*arr1[i]
+        b = s.length
+    }
+    return a
+};
+</script>
