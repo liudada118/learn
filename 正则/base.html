@@ -1,0 +1,84 @@
+<!-- <script>
+    let str = 'abc'
+    let reg = /abc/
+    // 长度
+    // {1,2} {2,} ? + * 
+    // ? /ab?c/ 可以出现b 也可以不出现
+    let reg1 = /a[b]c/  
+    // [asdf] 里面的字符任选一个
+
+    // 要么匹配内容  要么匹配位置
+    // #fff
+    // #ffffff
+    // css 里面 颜色 16进制
+    // ()  作为一个整体
+    // | 或者
+    // ^ 开始
+    // $ 结束
+    let a = /^#(([a-fA-F0-9]{6})|([a-fA-F0-9]{3}))/
+
+    // YYYY-MM-DD
+    // 2018-09-10
+
+    let reg4 = /^([0-9]{4})-(0[1-9|1[0-2]])-[0[0-9]|1[0-9]|2[0-9]|3[01]]$/
+    // 有没有匹配
+    // 而且还想要提取匹配的内容
+    console.log(reg4.test('2017-12-12'))
+
+    // ['输入的源文本',分组1,分组2,分组3,分组n]
+    console.log(reg4.exec('2017-12-12'))
+
+
+    console.log('2017-03-04'.match(reg4))
+ </script> -->
+
+ <script>
+    // 匹配字符串
+    let str = 'abc';
+    str === 'abc';
+
+    let reg = /abc/
+    // 长度
+    // {1, 2}
+    // /ab*c
+    let reg1 = /a[bdf]c/
+    // 匹配：内容 位置
+    // css 里面颜色的16进制的写法
+    // () 作为一个整体
+    // |  或者
+    // ^ 开始
+    // $ 结束
+    let reg2 = /^#(([0-9a-fA-F]{3})|([0-9a-fA-F]{6}))$/
+    let reg3 = /^[0-9]([0-9][0-9][1-9])-[0-9]{2}-[0-9]{2}$/
+    let reg4 = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+
+    // console.log(reg4.test('2017-12-12'));
+    console.log(reg4.exec('2017-12-12'))
+    console.log('2017-03-04'.match(reg4))
+
+    // ['输入的原文本', 分组1, 分组2, 分组3, 分组n]
+
+    let reg5 = /[a-z]/g
+    let str5 = 'ab'
+    // console.log(reg5.test(str5))
+    // console.log(reg5.test(str5))
+    // console.log(reg5.test(str5))
+    // console.log(reg5.test(str5))
+    // console.log(reg5.test(str5))
+    // console.log(reg5.test(str5))
+
+
+
+let state = {
+    name : 'lilei',
+    age : 18
+}
+let strs = 'my name is {name} , age is {age}'
+function compile(obj,tpl){
+    console.log(Object.keys(obj))
+    // tpl.replace(`${Object.keys}`{name},)
+    // Object.keys(obj).map(obj)
+    // console.log(obj.exec(strs))
+}
+compile(state,strs)
+</script> 
